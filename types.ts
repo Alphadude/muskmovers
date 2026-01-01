@@ -1,3 +1,4 @@
+
 import React from 'react';
 
 export enum Page {
@@ -10,11 +11,12 @@ export enum Page {
   INPUTS = 'inputs',
   CARDS = 'cards',
   MODALS = 'modals',
-  ICONS = 'icons'
+  ICONS = 'icons',
+  MARKETPLACE = 'marketplace',
+  LOGISTICS = 'logistics'
 }
 
 export interface ComponentProps {
-  // Fix: Imported React to resolve the namespace for ReactNode
   children?: React.ReactNode;
   className?: string;
 }
@@ -22,5 +24,5 @@ export interface ComponentProps {
 export interface NavItem {
   id: Page;
   label: string;
-  category: 'Foundation' | 'Components' | 'Getting Started';
+  category: 'Foundation' | 'Components' | 'Patterns' | 'Getting Started';
 }

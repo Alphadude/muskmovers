@@ -1,6 +1,6 @@
 
 import React from 'react';
-import { Icons } from '../constants';
+import { Icons } from '../constants.tsx';
 
 export const Colors: React.FC = () => {
   const colorScales = [
@@ -12,7 +12,7 @@ export const Colors: React.FC = () => {
 
   return (
     <div className="max-w-4xl">
-      <h1 className="text-3xl md:text-5xl font-display font-bold mb-6 tracking-tight dark:text-white">Colors</h1>
+      <h1 className="text-3xl md:text-5xl font-display font-bold mb-6 tracking-tight dark:text-white uppercase">Colors</h1>
       <p className="text-lg md:text-xl text-brand-gray-600 dark:text-brand-gray-400 mb-12">
         Our color palette is inspired by nocturnal engineering and aerospace propulsion.
       </p>
@@ -23,7 +23,7 @@ export const Colors: React.FC = () => {
             <div className="h-24 md:h-40 w-full" style={{ backgroundColor: c.hex }}></div>
             <div className="p-4 md:p-6">
               <div className="flex justify-between items-center mb-2">
-                <h3 className="font-display font-bold text-base md:text-lg dark:text-white">{c.name}</h3>
+                <h3 className="font-display font-bold text-base md:text-lg dark:text-white uppercase tracking-tight">{c.name}</h3>
                 <code className="text-[10px] md:text-sm bg-brand-gray-100 dark:bg-brand-gray-800 dark:text-brand-gray-300 px-2 py-1 rounded">{c.hex}</code>
               </div>
               <p className="text-xs md:text-sm text-brand-gray-500 dark:text-brand-gray-400">{c.desc}</p>
@@ -39,13 +39,12 @@ export const Typography: React.FC = () => {
   return (
     <div className="max-w-4xl space-y-16">
       <header>
-        <h1 className="text-3xl md:text-5xl font-display font-bold mb-6 tracking-tight dark:text-white">Typography</h1>
+        <h1 className="text-3xl md:text-5xl font-display font-bold mb-6 tracking-tight dark:text-white uppercase">Typography</h1>
         <p className="text-lg md:text-xl text-brand-gray-600 dark:text-brand-gray-400 max-w-2xl">
           Our typography system uses two distinct font families to balance high-impact brand expression with technical legibility.
         </p>
       </header>
 
-      {/* Font Families Section */}
       <section className="grid grid-cols-1 md:grid-cols-2 gap-12">
         <div className="space-y-6">
           <div className="inline-block px-3 py-1 bg-brand-orange text-[10px] font-bold text-white uppercase tracking-widest">Brand Display</div>
@@ -58,9 +57,6 @@ export const Typography: React.FC = () => {
               1234567890!@#$%^&*
             </p>
           </div>
-          <p className="text-sm text-brand-gray-600 dark:text-brand-gray-400 italic">
-            Used for headings, subheadings, and key marketing statements. Its geometric nature reflects our engineering roots.
-          </p>
         </div>
 
         <div className="space-y-6">
@@ -74,58 +70,11 @@ export const Typography: React.FC = () => {
               1234567890!@#$%^&*
             </p>
           </div>
-          <p className="text-sm text-brand-gray-600 dark:text-brand-gray-400 italic">
-            Used for all UI elements, body copy, and technical data. Optimized for maximum readability across all devices.
-          </p>
         </div>
       </section>
 
-      {/* Contextual Examples Section */}
       <section className="space-y-8">
-        <h2 className="text-2xl font-display font-bold dark:text-white border-b border-brand-gray-200 dark:border-brand-gray-800 pb-4">Contextual Usage</h2>
-        
-        <div className="space-y-12">
-          {/* Example 1: Brand Statement */}
-          <div className="bg-brand-gray-50 dark:bg-brand-gray-900 p-10 rounded-sm border border-brand-gray-200 dark:border-brand-gray-800">
-            <h4 className="text-[10px] font-bold text-brand-orange uppercase mb-4 tracking-widest">Marketing Statement (Display Font)</h4>
-            <p className="font-display text-3xl md:text-5xl font-bold text-brand-blue dark:text-white leading-[1.1] tracking-tighter">
-              WE ARE REDEFINING THE MOMENTUM OF GLOBAL LOGISTICS.
-            </p>
-            <p className="font-display text-xl mt-6 text-brand-gray-600 dark:text-brand-gray-300 font-medium">
-              Precision is not an option; it is our standard protocol.
-            </p>
-          </div>
-
-          {/* Example 2: Technical Body Copy */}
-          <div className="p-10 border border-brand-gray-200 dark:border-brand-gray-800 rounded-sm">
-            <h4 className="text-[10px] font-bold text-brand-blue dark:text-brand-orange uppercase mb-4 tracking-widest">Technical Body Copy (Interface Sans)</h4>
-            <div className="max-w-2xl space-y-4">
-              <p className="text-lg font-bold text-brand-blue dark:text-white">Operational Telemetry Overview</p>
-              <p className="text-brand-gray-600 dark:text-brand-gray-400 leading-relaxed">
-                The propulsion sequence is monitored by a distributed array of 42 sensors located throughout the primary cargo hold. Each sensor relays data at a frequency of 100Hz to the central processing unit. In the event of a deviation greater than 0.05%, an automatic lockdown protocol is initiated to preserve the integrity of the payload.
-              </p>
-              <div className="grid grid-cols-3 gap-4 mt-6 pt-6 border-t border-brand-gray-100 dark:border-brand-gray-800">
-                <div>
-                  <p className="text-[10px] font-bold text-brand-gray-400 uppercase">Pressure</p>
-                  <p className="text-xl font-mono text-brand-blue dark:text-white">101.3 kPa</p>
-                </div>
-                <div>
-                  <p className="text-[10px] font-bold text-brand-gray-400 uppercase">Temp</p>
-                  <p className="text-xl font-mono text-brand-blue dark:text-white">24.5°C</p>
-                </div>
-                <div>
-                  <p className="text-[10px] font-bold text-brand-gray-400 uppercase">Status</p>
-                  <p className="text-xl font-bold text-green-600">NOMINAL</p>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* Type Scale Section */}
-      <section className="space-y-8">
-        <h2 className="text-2xl font-display font-bold dark:text-white border-b border-brand-gray-200 dark:border-brand-gray-800 pb-4">Type Scale</h2>
+        <h2 className="text-2xl font-display font-bold dark:text-white border-b border-brand-gray-200 dark:border-brand-gray-800 pb-4 uppercase tracking-tight">Type Scale</h2>
         <div className="overflow-x-auto">
           <table className="w-full text-left">
             <thead>
@@ -141,13 +90,7 @@ export const Typography: React.FC = () => {
                 <td className="py-6 font-mono text-xs">Display H1</td>
                 <td className="py-6 text-xs uppercase">Space Grotesk</td>
                 <td className="py-6 text-xs text-brand-gray-500">60px / 700</td>
-                <td className="py-6"><span className="font-display text-4xl font-bold dark:text-white">Headline 1</span></td>
-              </tr>
-              <tr>
-                <td className="py-6 font-mono text-xs">Display H2</td>
-                <td className="py-6 text-xs uppercase">Space Grotesk</td>
-                <td className="py-6 text-xs text-brand-gray-500">48px / 700</td>
-                <td className="py-6"><span className="font-display text-3xl font-bold dark:text-white">Headline 2</span></td>
+                <td className="py-6"><span className="font-display text-4xl font-bold dark:text-white uppercase tracking-tighter">Headline 1</span></td>
               </tr>
               <tr>
                 <td className="py-6 font-mono text-xs">Body Large</td>
@@ -155,20 +98,55 @@ export const Typography: React.FC = () => {
                 <td className="py-6 text-xs text-brand-gray-500">18px / 400</td>
                 <td className="py-6"><span className="text-lg dark:text-brand-gray-200">The quick brown fox jumps over the lazy dog.</span></td>
               </tr>
-              <tr>
-                <td className="py-6 font-mono text-xs">Body Base</td>
-                <td className="py-6 text-xs uppercase">Inter</td>
-                <td className="py-6 text-xs text-brand-gray-500">16px / 400</td>
-                <td className="py-6"><span className="text-base dark:text-brand-gray-400">The quick brown fox jumps over the lazy dog.</span></td>
-              </tr>
-              <tr>
-                <td className="py-6 font-mono text-xs">Caption</td>
-                <td className="py-6 text-xs uppercase">Inter</td>
-                <td className="py-6 text-xs text-brand-gray-500">12px / 500</td>
-                <td className="py-6"><span className="text-xs font-medium text-brand-gray-500 uppercase tracking-wider">The quick brown fox jumps over the lazy dog.</span></td>
-              </tr>
             </tbody>
           </table>
+        </div>
+      </section>
+    </div>
+  );
+};
+
+export const Grid: React.FC = () => {
+  return (
+    <div className="max-w-4xl">
+      <h1 className="text-3xl md:text-5xl font-display font-bold mb-6 tracking-tight dark:text-white uppercase">Grid System</h1>
+      <p className="text-lg md:text-xl text-brand-gray-600 dark:text-brand-gray-400 mb-12">
+        A precise 12-column grid ensures structural integrity across all Musk Mover platforms, from mobile telemetry dashboards to industrial desktop interfaces.
+      </p>
+
+      <section className="space-y-12">
+        <div className="p-8 border border-brand-gray-200 dark:border-brand-gray-800 bg-brand-gray-50 dark:bg-brand-gray-900 rounded-sm">
+          <h3 className="text-xs font-bold text-brand-orange uppercase tracking-widest mb-6">12-Column Visualizer</h3>
+          <div className="grid grid-cols-4 md:grid-cols-12 gap-4 mb-8">
+            {[...Array(12)].map((_, i) => (
+              <div key={i} className="h-32 bg-brand-blue/5 dark:bg-brand-orange/10 border border-brand-blue/10 dark:border-brand-orange/20 rounded-sm flex items-center justify-center">
+                <span className="text-[10px] font-mono font-bold text-brand-blue/40 dark:text-brand-orange/40">{i + 1}</span>
+              </div>
+            ))}
+          </div>
+          <div className="grid grid-cols-2 md:grid-cols-3 gap-4">
+             <div className="col-span-1 h-12 bg-brand-blue/10 dark:bg-white/5 rounded-sm flex items-center justify-center text-[10px] font-bold uppercase tracking-widest">Col Span 1 (Mobile)</div>
+             <div className="col-span-1 h-12 bg-brand-blue/10 dark:bg-white/5 rounded-sm flex items-center justify-center text-[10px] font-bold uppercase tracking-widest">Col Span 1 (Mobile)</div>
+          </div>
+        </div>
+
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+          <div className="p-6 border border-brand-gray-200 dark:border-brand-gray-800 rounded-sm">
+            <h4 className="font-display font-bold mb-4 dark:text-white uppercase tracking-tight">Desktop Breakdown</h4>
+            <ul className="space-y-3 text-sm text-brand-gray-600 dark:text-brand-gray-400">
+              <li className="flex justify-between"><span>Columns:</span> <span className="font-mono font-bold text-brand-blue dark:text-white">12</span></li>
+              <li className="flex justify-between"><span>Gutter:</span> <span className="font-mono font-bold text-brand-blue dark:text-white">32px</span></li>
+              <li className="flex justify-between"><span>Margin:</span> <span className="font-mono font-bold text-brand-blue dark:text-white">64px - 120px</span></li>
+            </ul>
+          </div>
+          <div className="p-6 border border-brand-gray-200 dark:border-brand-gray-800 rounded-sm">
+            <h4 className="font-display font-bold mb-4 dark:text-white uppercase tracking-tight">Mobile Breakdown</h4>
+            <ul className="space-y-3 text-sm text-brand-gray-600 dark:text-brand-gray-400">
+              <li className="flex justify-between"><span>Columns:</span> <span className="font-mono font-bold text-brand-blue dark:text-white">4</span></li>
+              <li className="flex justify-between"><span>Gutter:</span> <span className="font-mono font-bold text-brand-blue dark:text-white">16px</span></li>
+              <li className="flex justify-between"><span>Margin:</span> <span className="font-mono font-bold text-brand-blue dark:text-white">16px - 24px</span></li>
+            </ul>
+          </div>
         </div>
       </section>
     </div>
@@ -219,7 +197,7 @@ export const Iconography: React.FC = () => {
 
   return (
     <div className="max-w-4xl">
-      <h1 className="text-3xl md:text-5xl font-display font-bold mb-6 tracking-tight dark:text-white">Iconography</h1>
+      <h1 className="text-3xl md:text-5xl font-display font-bold mb-6 tracking-tight dark:text-white uppercase">Iconography</h1>
       <p className="text-lg md:text-xl text-brand-gray-600 dark:text-brand-gray-400 mb-12">
         A technical suite of icons designed for global logistics.
       </p>
@@ -241,20 +219,6 @@ export const Iconography: React.FC = () => {
           </div>
         </div>
       ))}
-
-      <div className="mt-16 p-6 md:p-8 bg-brand-gray-900 text-white rounded-sm">
-        <h3 className="text-lg md:text-xl font-display font-bold mb-4">Icon Usage Guidelines</h3>
-        <ul className="space-y-4 text-xs md:text-sm text-brand-gray-300">
-          <li className="flex gap-3">
-            <span className="text-brand-orange font-bold">01.</span>
-            <span>Use icons at base size of 24px or 32px.</span>
-          </li>
-          <li className="flex gap-3">
-            <span className="text-brand-orange font-bold">02.</span>
-            <span>Maintain a stroke weight of 2px.</span>
-          </li>
-        </ul>
-      </div>
     </div>
   );
 };

@@ -1,6 +1,6 @@
 
 import React, { useEffect, useState } from 'react';
-import { generateBrandDescription } from '../services/geminiService';
+import { generateBrandDescription } from '../services/geminiService.ts';
 
 const Introduction: React.FC = () => {
   const [description, setDescription] = useState('Loading brand philosophy...');

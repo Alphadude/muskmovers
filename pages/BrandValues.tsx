@@ -1,6 +1,6 @@
 
 import React from 'react';
-import { MuskMoverLogo } from '../constants';
+import { MuskMoverLogo } from '../constants.tsx';
 
 const BrandValues: React.FC = () => {
   const logoVariations = [
@@ -14,12 +14,10 @@ const BrandValues: React.FC = () => {
     <div className="max-w-4xl animate-in fade-in slide-in-from-bottom-4 duration-700">
       <h1 className="text-3xl md:text-5xl font-display font-bold mb-6 tracking-tight dark:text-white uppercase">Brand Identity</h1>
       
-      {/* Description at the top as per brand guidelines */}
       <p className="text-lg md:text-xl text-brand-gray-600 dark:text-brand-gray-400 mb-10 leading-relaxed max-w-4xl">
         The Musk Mover logo is a symbol of engineering excellence, speed, and reliability. It consists of two interlocking geometric peaks representing propulsion and progress.
       </p>
 
-      {/* Hero Visual Section - Updated to a ship at sea with framed styling */}
       <section className="mb-20">
         <div className="relative p-1 border-[3px] border-blue-400/50 rounded-sm">
           <div className="relative h-[400px] md:h-[600px] overflow-hidden bg-brand-blue">
@@ -28,7 +26,6 @@ const BrandValues: React.FC = () => {
               alt="Heavy Cargo Vessel at Sea" 
               className="w-full h-full object-cover opacity-70 transition-transform duration-[3000ms] hover:scale-105"
             />
-            {/* Scrim and Text Overlay exactly as per screenshot */}
             <div className="absolute inset-0 bg-gradient-to-t from-brand-blue via-transparent to-transparent flex flex-col justify-end p-8 md:p-16">
               <p className="text-brand-orange text-xs md:text-sm font-bold uppercase tracking-[0.2em] mb-4">
                 Heavy Lift Operations
