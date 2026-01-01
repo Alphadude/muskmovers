@@ -1,0 +1,8 @@
+{
+  "name": "Musk Mover Design System",
+  "description": "A high-precision design system for Musk Mover, inspired by the Porsche Design System, featuring engineering-grade UI components and brand guidelines.",
+  "requestFramePermissions": [
+    "camera",
+    "microphone"
+  ]
+}
