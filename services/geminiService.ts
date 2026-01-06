@@ -1,11 +1,11 @@
 
 import { GoogleGenAI } from "@google/genai";
 
-// Initialize the GoogleGenAI client strictly using process.env.API_KEY as per naming parameter guidelines
-const ai = new GoogleGenAI({ apiKey: process.env.API_KEY });
-
 export const generateBrandDescription = async (context: string) => {
   try {
+    // Initializing inside the function ensures process.env is only accessed when the function is actually called.
+    // This prevents the whole application from crashing on load if 'process' is undefined in the global scope.
+    const ai = new GoogleGenAI({ apiKey: process.env.API_KEY });
     const response = await ai.models.generateContent({
       model: 'gemini-3-flash-preview',
       contents: `Based on the brand Musk Mover (primary: #06233D, secondary: #F84713), generate a professional brand philosophy. 

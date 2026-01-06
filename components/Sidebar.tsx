@@ -1,4 +1,3 @@
-
 import React, { useState } from 'react';
 import { Page, NavItem } from '../types.ts';
 import { MuskMoverLogo, Icons } from '../constants.tsx';
@@ -8,6 +7,7 @@ interface SidebarProps {
   onPageChange: (page: Page) => void;
   isDarkMode: boolean;
   toggleDarkMode: () => void;
+  onExportPDF: () => void;
 }
 
 const navItems: NavItem[] = [
@@ -25,7 +25,7 @@ const navItems: NavItem[] = [
   { id: Page.LOGISTICS, label: 'Logistics Tracking', category: 'Patterns' },
 ];
 
-const Sidebar: React.FC<SidebarProps> = ({ activePage, onPageChange, isDarkMode, toggleDarkMode }) => {
+const Sidebar: React.FC<SidebarProps> = ({ activePage, onPageChange, isDarkMode, toggleDarkMode, onExportPDF }) => {
   const [isOpen, setIsOpen] = useState(false);
   const categories: NavItem['category'][] = ['Getting Started', 'Foundation', 'Components', 'Patterns'];
 
@@ -95,15 +95,20 @@ const Sidebar: React.FC<SidebarProps> = ({ activePage, onPageChange, isDarkMode,
           ))}
         </div>
 
-        <div className="p-4 border-t border-brand-gray-100 dark:border-brand-gray-800 space-y-4">
+        <div className="p-4 border-t border-brand-gray-100 dark:border-brand-gray-800 space-y-2">
           <button 
             onClick={toggleDarkMode}
             className="flex items-center justify-center gap-3 w-full px-4 py-3 text-xs font-bold uppercase tracking-widest border border-brand-gray-200 dark:border-brand-gray-700 rounded-sm hover:bg-brand-gray-50 dark:hover:bg-brand-gray-800 transition-colors"
           >
-            <div className="flex items-center gap-2">
-              <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>
-              <span>DARK MODE</span>
-            </div>
+            <Icons.Moon />
+            <span>{isDarkMode ? 'LIGHT MODE' : 'DARK MODE'}</span>
+          </button>
+          <button 
+            onClick={onExportPDF}
+            className="flex items-center justify-center gap-3 w-full px-4 py-3 text-xs font-bold uppercase tracking-widest bg-brand-orange text-white rounded-sm hover:opacity-90 transition-opacity shadow-lg shadow-brand-orange/20"
+          >
+            <Icons.Download />
+            <span>EXPORT PDF SYSTEM</span>
           </button>
           <div className="text-[10px] text-brand-gray-400 font-mono text-center pt-2">
             DS V1.0.0 © 2024
